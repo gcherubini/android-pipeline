@@ -3,12 +3,12 @@
 1 - Create Android application following Android Studio Wizard, 
 you may choose any prefered language (Android or Kotlin)
 
-## Learning the basics of Build
+## Basics of Build
 
 1 - Run the Gradle build task: 
 ./gradlew build
 
-## Learning the basics of Unit Testing
+## Basics of Unit Testing
 
 1 - Open "ExampleUnitTest" file and make the test fail
 
@@ -48,8 +48,14 @@ BUILD SUCCESSFUL in 5s
 
 If you want to run your tests for only one build type (this can be important for a large test suite) you can use ./gradlew testDebug or ./gradlew testRelease.
 
+5 - Open the generated reports:
 
-## Learning the basics of Android UI testing
+When you run this task some tests reports are generated, it is placed in: 
+"app/build/reports/tests/testDebugUnitTest/index.html"
+"app/build/reports/tests/testReleaseUnitTest/index.html"
+
+
+## Basics of Android UI testing
 
 1 - Be connected with some Android device (real or emulator)
 
@@ -98,3 +104,12 @@ BUILD SUCCESSFUL in 26s
 ```
 
 If you want to run your tests for only one build type (this can be important for a large test suite) you can use ./gradlew connectedDebugAndroidTest or ./gradlew connectedReleaseAndroidTest.
+
+5 - Open the generated reports:
+
+When you run this task some tests reports are generated, it is placed in: 
+"app/build/reports/androidTests/connected/index.html"
+
+## Fastlane Install
+
+## Setup Google Play Console
