@@ -113,3 +113,25 @@ When you run this task some tests reports are generated, it is placed in:
 ## Fastlane Install
 
 ## Setup Google Play Console
+
+## Lint
+If you want to analyze the source code with some lint tool, the Android Studio provides you a native solution thought Gradle.
+It automatically generates reports and you can integrate this task in your pipeline to make your job fail when there is some
+issue found. 
+
+1 - ./gradlew lint
+
+When you run this task some lint reports are generated, it is placed in: 
+"/app/build/reports/lint-results.html"
+"/app/build/reports/lint-results.xml"
+
+If you want to break your build on any lint warning found.
+
+Open build.gradle file and add:
+```
+lintOptions {
+    warningsAsErrors true   
+}
+```
+
+## Code Format
