@@ -125,9 +125,7 @@ When you run this task some lint reports are generated, it is placed in:
 "/app/build/reports/lint-results.html"
 "/app/build/reports/lint-results.xml"
 
-If you want to break your build on any lint warning found.
-
-Open build.gradle file and add:
+If you want to break your build on any lint warning found. Just open build.gradle file and add:
 ```
 lintOptions {
     warningsAsErrors true   
