@@ -7,7 +7,7 @@ you may choose any prefered language (Android or Kotlin)
 
 [3 - Prepare UI tests layer](#basics-of-android-ui-testing)
 
-##Basics of Build
+## Basics of Build
 
 1 - Run the Gradle build task: 
 ./gradlew build
@@ -82,7 +82,7 @@ you may choose any prefered language (Android or Kotlin)
  
  
  
-##Basics of Unit Testing
+## Basics of Unit Testing
 
 1 - Open "ExampleUnitTest" file and make the test fail
 
@@ -129,7 +129,7 @@ When you run this task some tests reports are generated, it is placed in:
 "app/build/reports/tests/testReleaseUnitTest/index.html"
 
 
-##Basics of Android UI testing
+## Basics of Android UI testing
 
 1 - Be connected with some Android device (real or emulator)
 
