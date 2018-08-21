@@ -1,11 +1,23 @@
 # Android Pipeline
 
-1 - Create Android application following Android Studio Wizard, 
-you may choose any prefered language (Android or Kotlin)
+[1 - Create Android application following Android Studio Wizard, 
+ you may choose any prefered language (Android or Kotlin)](#creating-an-android-project)
 
 [2 - Prepare unit tests layer](#basics-of-unit-testing)
 
 [3 - Prepare UI tests layer](#basics-of-android-ui-testing)
+
+## Creating an Android project
+
+![Screenshot](imgs/wizard1.png)
+
+![Screenshot](imgs/wizard2.png)
+
+![Screenshot](imgs/wizard3.png)
+
+![Screenshot](imgs/wizard4.png)
+
+![Screenshot](imgs/wizard5.png)
 
 ## Basics of Build
 
