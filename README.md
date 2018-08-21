@@ -3,12 +3,86 @@
 1 - Create Android application following Android Studio Wizard, 
 you may choose any prefered language (Android or Kotlin)
 
-## Basics of Build
+[2 - Prepare unit tests layer](#basics-of-unit-testing)
+
+[3 - Prepare UI tests layer](#basics-of-android-ui-testing)
+
+##Basics of Build
 
 1 - Run the Gradle build task: 
 ./gradlew build
-
-## Basics of Unit Testing
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ sda
+ 
+  sda
+  
+   sda
+   
+    sda
+    
+     sda
+     
+      sda
+      
+       sda
+       
+        sda
+        
+         sda
+         
+          sda
+          
+           sda
+           
+            sda
+            
+             sda
+             
+              sda
+              
+               sda
+               
+                sda
+                
+                 sda
+                 
+                  sda
+                  
+                   sda
+                   
+                    sda
+                    
+                     sda
+                     
+                      sda
+                      
+                       sda
+                       
+                        sda
+                        
+                         sda
+                         
+                         
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+##Basics of Unit Testing
 
 1 - Open "ExampleUnitTest" file and make the test fail
 
@@ -55,7 +129,7 @@ When you run this task some tests reports are generated, it is placed in:
 "app/build/reports/tests/testReleaseUnitTest/index.html"
 
 
-## Basics of Android UI testing
+##Basics of Android UI testing
 
 1 - Be connected with some Android device (real or emulator)
 
@@ -125,7 +199,7 @@ When you run this task some lint reports are generated, it is placed in:
 "/app/build/reports/lint-results.html"
 "/app/build/reports/lint-results.xml"
 
-If you want to break your build on any lint warning found. Just open build.gradle file and add:
+If you want to break your build on any lint warning found. Just otu vaipen build.gradle file and add:
 ```
 lintOptions {
     warningsAsErrors true   
