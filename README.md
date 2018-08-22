@@ -148,30 +148,13 @@ When you run this task some tests reports are generated, it is placed in:
 ![Screenshot](imgs/playconsole5.png)
 
 
-## Google Play manual release
-
-* Login on [Google Play Console](https://play.google.com/apps/publish)
-
-* Generate a manual release by following the images below:
- 
-![Screenshot](imgs/googleplaymanualrelease1.png)
-
-![Screenshot](imgs/googleplaymanualrelease2.png)
-
-![Screenshot](imgs/googleplaymanualrelease3.png)
-
-![Screenshot](imgs/googleplaymanualrelease4.png)
-
-![Screenshot](imgs/googleplaymanualrelease5.png)
-
-
 ## Crashlytics Beta Distribution
 
-...
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 ## Fastlane 
 
-..
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 
 # Extras
@@ -195,3 +178,21 @@ lintOptions {
 ```
 
 ## Code Format
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+## Google Play manual release
+
+* Login on [Google Play Console](https://play.google.com/apps/publish)
+
+* Generate a manual release by following the images below:
+ 
+![Screenshot](imgs/googleplaymanualrelease1.png)
+
+![Screenshot](imgs/googleplaymanualrelease2.png)
+
+![Screenshot](imgs/googleplaymanualrelease3.png)
+
+![Screenshot](imgs/googleplaymanualrelease4.png)
+
+![Screenshot](imgs/googleplaymanualrelease5.png)
+
