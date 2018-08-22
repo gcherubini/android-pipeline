@@ -126,9 +126,55 @@ If you want to run your tests for only one build type (this can be important for
 When you run this task some tests reports are generated, it is placed in: 
 "app/build/reports/androidTests/connected/index.html"
 
-## Fastlane Install
 
-## Setup Google Play Console
+# Release
+
+## Application creation on Google Play Console
+
+* Subscribe in [Google Developer Program](https://developers.google.com/programs/)
+
+* Login on [Google Play Console](https://play.google.com/apps/publish)
+
+* Create an Android application by following the images below:
+ 
+![Screenshot](imgs/playconsole1.png)
+
+![Screenshot](imgs/playconsole2.png)
+
+![Screenshot](imgs/playconsole3.png)
+
+![Screenshot](imgs/playconsole4.png)
+
+![Screenshot](imgs/playconsole5.png)
+
+
+## Google Play manual release
+
+* Login on [Google Play Console](https://play.google.com/apps/publish)
+
+* Generate a manual release by following the images below:
+ 
+![Screenshot](imgs/googleplaymanualrelease1.png)
+
+![Screenshot](imgs/googleplaymanualrelease2.png)
+
+![Screenshot](imgs/googleplaymanualrelease3.png)
+
+![Screenshot](imgs/googleplaymanualrelease4.png)
+
+![Screenshot](imgs/googleplaymanualrelease5.png)
+
+
+## Crashlytics Beta Distribution
+
+...
+
+## Fastlane 
+
+..
+
+
+# Extras
 
 ## Lint
 If you want to analyze the source code with some lint tool, the Android Studio provides you a native solution thought Gradle.
