@@ -221,3 +221,14 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 Distribute the opt-in url:
 
 ![Screenshot](imgs/managetesters5.png)
+
+## Tester program acceptance
+
+Access the opt-in url:
+
+![Screenshot](imgs/testeracceptprogram1.png)
+
+![Screenshot](imgs/testeracceptprogram2.png)
+
+![Screenshot](imgs/testeracceptprogram3.png)
+
