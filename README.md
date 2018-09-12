@@ -184,9 +184,9 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 * Login on [Google Play Console](https://play.google.com/apps/publish)
 
-* [Prepare your release on Google Play](googleplayreleasepreparation)
+* [Prepare your release on Google Play](#google-play-release-preparation)
 
-* Setup testers [Google Play release preparation](googleplayreleasepreparation)
+* [Manage testers](#google-play-manage-testers)
 
 * Generate a manual release by following the images below:
  
@@ -206,7 +206,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 * In order to distribute your Android application, you should before set up some items on play store: App releases, Store Listing, Content Rating and Pricing and Distribution
 
-* ![Screenshot](imgs/googleplaymanualrelease1.png)
+![Screenshot](imgs/googleplaymanualrelease1.png)
 
 ## Google Play manage testers
 
@@ -218,6 +218,6 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 ![Screenshot](imgs/managetesters4.png)
 
-![Screenshot](imgs/managetesters5.png)
+Distribute the opt-in url:
 
-![Screenshot](imgs/managetesters6.png)
+![Screenshot](imgs/managetesters5.png)
