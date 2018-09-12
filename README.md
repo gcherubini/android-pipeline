@@ -7,6 +7,9 @@
 
 [3 - Prepare UI tests layer](#basics-of-android-ui-testing)
 
+[4 - Subscribe your application on Google Play Console](#application-subscription-on-google-play-console)
+
+
 ## Creating an Android project
 
 ![Screenshot](imgs/wizard1.png)
@@ -129,7 +132,7 @@ When you run this task some tests reports are generated, it is placed in:
 
 # Release
 
-## Application creation on Google Play Console
+## Application subscription on Google Play Console
 
 * Subscribe in [Google Developer Program](https://developers.google.com/programs/)
 
@@ -146,6 +149,12 @@ When you run this task some tests reports are generated, it is placed in:
 ![Screenshot](imgs/playconsole4.png)
 
 ![Screenshot](imgs/playconsole5.png)
+
+## Google Play release preparation
+
+* In order to distribute your Android application, you should before set up some items on play store: App releases, Store Listing, Content Rating and Pricing and Distribution
+
+![Screenshot](imgs/googleplaymanualrelease1.png)
 
 
 ## Crashlytics Beta Distribution
@@ -201,12 +210,6 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 ![Screenshot](imgs/googleplaymanualrelease5.png)
 
 ![Screenshot](imgs/googleplaymanualrelease6.png)
-
-## Google Play release preparation
-
-* In order to distribute your Android application, you should before set up some items on play store: App releases, Store Listing, Content Rating and Pricing and Distribution
-
-![Screenshot](imgs/googleplaymanualrelease1.png)
 
 ## Google Play manage testers
 
