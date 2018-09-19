@@ -7,7 +7,29 @@
 
 [3 - Prepare UI tests layer](#basics-of-android-ui-testing)
 
-[4 - Subscribe your application on Google Play Console](#application-subscription-on-google-play-console)
+
+# Manual Distribution with Google Play Store
+
+[1 - Subscribe your application on Google Play Console](#application-subscription-on-google-play-console)
+
+[2 - Prepare release distribution in Google Play Console](#google-play-release-distribution-preparation)
+
+[3 - Distribute manually](#google-play-manual-release)
+
+[4 - Manage testers](#google-play-manage-testers)
+
+
+# Automated Distribution with Fastlane and Google Play Store
+
+[1 - Subscribe your application on Google Play Console](#application-subscription-on-google-play-console)
+
+[2 - Prepare release distribution in Google Play Console](#google-play-release-distribution-preparation)
+
+[3 - Setup a service account in Google Play Console](#google-play-console-service-account-setup)
+
+[4 - Setup fastlane](#fastlane)
+
+[5 - Manage testers](#google-play-manage-testers)
 
 
 ## Creating an Android project
@@ -150,7 +172,7 @@ When you run this task some tests reports are generated, it is placed in:
 
 ![Screenshot](imgs/playconsole5.png)
 
-## Google Play release preparation
+## Google Play release distribution preparation
 
 * In order to distribute your Android application, you should before set up some items on play store: App releases, Store Listing, Content Rating and Pricing and Distribution
 
@@ -235,3 +257,18 @@ Access the opt-in url:
 
 ![Screenshot](imgs/testeracceptprogram3.png)
 
+## Google Play Console Service Account setup
+
+![Screenshot](imgs/addingServiceAccount1.png)
+
+![Screenshot](imgs/addingServiceAccount2.png)
+
+![Screenshot](imgs/addingServiceAccount3.png)
+
+![Screenshot](imgs/addingServiceAccount4.png)
+
+![Screenshot](imgs/addingServiceAccount5.png)
+
+![Screenshot](imgs/addingServiceAccount6.png)
+
+![Screenshot](imgs/addingServiceAccount7.png)
