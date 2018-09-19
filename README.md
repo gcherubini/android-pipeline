@@ -14,9 +14,11 @@
 
 [2 - Prepare release distribution in Google Play Console](#google-play-release-distribution-preparation)
 
-[3 - Distribute manually](#google-play-manual-release)
+[3 - Generates a Key Store to Sign application](#generates-a-key-store-to-sign-application)
 
-[4 - Manage testers](#google-play-manage-testers)
+[4 - Distribute manually](#google-play-manual-release)
+
+[5 - Manage testers](#google-play-manage-testers)
 
 
 # Automated Distribution with Fastlane and Google Play Store
@@ -25,12 +27,79 @@
 
 [2 - Prepare release distribution in Google Play Console](#google-play-release-distribution-preparation)
 
-[3 - Setup a service account in Google Play Console](#google-play-console-service-account-setup)
+[3 - Generates a Key Store to Sign application](#generates-a-key-store-to-sign-application)
 
-[4 - Setup fastlane](#fastlane)
+[4 - Setup Google Play Console Service Account](#setup-google-play-console-service-account)
 
-[5 - Manage testers](#google-play-manage-testers)
+[5 - Prepares Gradle Release task with sign data for automated release](#prepares-gradle-release-task-with-sign-data-for-automated release)
 
+[6 - Setup fastlane](#https://docs.fastlane.tools/getting-started/android/setup/)
+
+[7 - Manage testers](#google-play-manage-testers)
+
+## Generates a Key Store to Sign application
+
+[1 - Generates a Key Store to sign the application](https://developer.android.com/studio/publish/app-signing)
+
+2 - Store in a secure place the values below:
+Store password, key alias and key password
+
+3 - The generated KeyStore can be placed inside secret/ path of your application folder
+As it is a sensitive data, add the following line inside .gitignore if you are under a Git repository:
+```
+secret/
+```
+
+## Setup Google Play Console Service Account
+
+[1 - Setup a service account in Google Play Console](#google-play-console-service-account-setup)
+
+2 - The service account JSON private key can be placed inside secret/ path of your application folder
+As it is a sensitive data, add the following line inside .gitignore if you are under a Git repository:
+```
+secret/
+```
+
+## Prepares Gradle Release task with sign data for automated release
+
+1 - Rescue and add KeyStore values to local.properties file
+```
+RELEASE_STORE_FILE=../secret/cipipeline
+RELEASE_STORE_PASSWORD=cipipepassword
+RELEASE_KEY_ALIAS=cipipealias
+RELEASE_KEY_PASSWORD=cipipepasswordkey
+```
+
+2 - As it is a sensitive data, add the following line inside .gitignore if you are under a Git repository:
+```
+local.properties
+```
+
+3 - Add these properties to signing and build type configurations in build.gradle file,
+ in order to sign the application when the release task is called
+```
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def RELEASE_STORE_FILE = properties.getProperty('RELEASE_STORE_FILE')
+def RELEASE_KEY_ALIAS = properties.getProperty('RELEASE_KEY_ALIAS')
+def RELEASE_KEY_PASSWORD = properties.getProperty('RELEASE_KEY_PASSWORD')
+def RELEASE_STORE_PASSWORD = properties.getProperty('RELEASE_STORE_PASSWORD')
+
+signingConfigs {
+        release {
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+```
 
 ## Creating an Android project
 
@@ -179,15 +248,6 @@ When you run this task some tests reports are generated, it is placed in:
 ![Screenshot](imgs/googleplaymanualrelease1.png)
 
 
-## Crashlytics Beta Distribution
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-## Fastlane 
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-
 # Extras
 
 ## Lint
@@ -207,9 +267,6 @@ lintOptions {
     warningsAsErrors true   
 }
 ```
-
-## Code Format
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 ## Google Play manual release
 
@@ -232,6 +289,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 ![Screenshot](imgs/googleplaymanualrelease5.png)
 
 ![Screenshot](imgs/googleplaymanualrelease6.png)
+
 
 ## Google Play manage testers
 
@@ -272,3 +330,5 @@ Access the opt-in url:
 ![Screenshot](imgs/addingServiceAccount6.png)
 
 ![Screenshot](imgs/addingServiceAccount7.png)
+
+![Screenshot](imgs/addingServiceAccount8.png)

@@ -4,6 +4,13 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def RELEASE_STORE_FILE = properties.getProperty('RELEASE_STORE_FILE')
+def RELEASE_KEY_ALIAS = properties.getProperty('RELEASE_KEY_ALIAS')
+def RELEASE_KEY_PASSWORD = properties.getProperty('RELEASE_KEY_PASSWORD')
+def RELEASE_STORE_PASSWORD = properties.getProperty('RELEASE_STORE_PASSWORD')
+
 android {
     compileSdkVersion 27
     defaultConfig {
