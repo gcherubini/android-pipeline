@@ -31,9 +31,9 @@
 
 [4 - Setup Google Play Console Service Account](#setup-google-play-console-service-account)
 
-[5 - Prepares Gradle Release task with sign data for automated release](#prepares-gradle-release-task-with-sign-data-for-automated release)
+[5 - Prepares Gradle Release task with sign data for automated release](#prepares-gradle-release-task-with-sign-data-for-automated-release)
 
-[6 - Setup fastlane](#https://docs.fastlane.tools/getting-started/android/setup/)
+[6 - Setup fastlane](https://docs.fastlane.tools/getting-started/android/setup/)
 
 [7 - Manage testers](#google-play-manage-testers)
 
