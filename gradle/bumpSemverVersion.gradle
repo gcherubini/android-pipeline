@@ -1,0 +1,40 @@
+import java.util.regex.Pattern
+
+task bumpSemverVersion << {
+    if (bump != "major" && bump != "minor" && bump != "patch") {
+        println "SenVer type param should be passed. (major, minor or patch)"
+        return
+    }
+
+    def propsFile = file("../app/build.gradle")
+    def propsText = propsFile.getText()
+    def patternVersionNumber = Pattern.compile(versionKey + "(\\s?)=(\\s?)\"(\\d+)\\.(\\d+)\\.(\\d+)\"")
+    def matcherVersionNumber = patternVersionNumber.matcher(propsText)
+    matcherVersionNumber.find()
+
+    def major = Integer.parseInt(matcherVersionNumber.group(3))
+    def minor = Integer.parseInt(matcherVersionNumber.group(4))
+    def patch = Integer.parseInt(matcherVersionNumber.group(5))
+
+    println "VERSION=" + major + "." + minor + "." + patch
+
+    switch (bump) {
+        case "major":
+            major++
+            break
+        case "minor":
+            minor++
+            break
+        case "patch":
+            patch++
+            break
+        default:
+            println "SenVer bump type should be passed: major, minor or patch"
+            break
+    }
+
+    propsText = matcherVersionNumber.replaceAll(versionKey + " = \"" + major + "." + minor + "." + patch + "\"")
+    propsFile.write(propsText)
+
+    println "BUMPED VERSION=" + major + "." + minor + "." + patch
+}

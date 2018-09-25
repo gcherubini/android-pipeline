@@ -62,7 +62,14 @@ secret/
 
 ## Prepares Gradle Release task with sign data for automated release
 
-1 - Rescue and add KeyStore values to local.properties file
+1 - Get release keys [from local.properties](#get-release-keys-from-local.properties)
+or
+[from environment variables](#get-release-keys-from-environment-variables)
+
+
+## Get release keys from local.properties
+
+1 - Store the KeyStore keys to local.properties file
 ```
 RELEASE_STORE_FILE=../secret/cipipeline
 RELEASE_STORE_PASSWORD=cipipepassword
@@ -80,17 +87,46 @@ local.properties
 ```
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
-def RELEASE_STORE_FILE = properties.getProperty('RELEASE_STORE_FILE')
-def RELEASE_KEY_ALIAS = properties.getProperty('RELEASE_KEY_ALIAS')
-def RELEASE_KEY_PASSWORD = properties.getProperty('RELEASE_KEY_PASSWORD')
-def RELEASE_STORE_PASSWORD = properties.getProperty('RELEASE_STORE_PASSWORD')
 
 signingConfigs {
         release {
-            storeFile file(RELEASE_STORE_FILE)
-            storePassword RELEASE_STORE_PASSWORD
-            keyAlias RELEASE_KEY_ALIAS
-            keyPassword RELEASE_KEY_PASSWORD
+            storeFile file(properties.RELEASE_STORE_FILE)
+            storePassword properties.RELEASE_STORE_PASSWORD
+            keyAlias properties.RELEASE_KEY_ALIAS
+            keyPassword properties.RELEASE_KEY_PASSWORD
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+```
+
+## Get release keys from environment variables
+
+1 - Open terminal and add the KeyStore keys to your computer environment variables
+```
+export CIPIPE_RELEASE_STORE_FILE=../secret/cipipeline
+export CIPIPE_RELEASE_STORE_PASSWORD=cipipepassword
+export CIPIPE_RELEASE_KEY_ALIAS=cipipealias
+export CIPIPE_RELEASE_KEY_PASSWORD=cipipepasswordkey        
+```
+
+2 - Type env and check if the variables were properly added
+
+3 - If you are under a Continuous Integration system, add them to its platform
+
+4 - Add these properties to signing and build type configurations in build.gradle file,
+ in order to sign the application when the release task is called
+```
+signingConfigs {
+        release {
+            storeFile file(System.env.CIPIPE_RELEASE_STORE_FILE)
+            storePassword System.env.CIPIPE_RELEASE_STORE_PASSWORD
+            keyAlias System.env.CIPIPE_RELEASE_KEY_ALIAS
+            keyPassword System.env.CIPIPE_RELEASE_KEY_PASSWORD
         }
     }
 

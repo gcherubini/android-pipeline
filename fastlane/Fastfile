@@ -26,18 +26,45 @@ platform :android do
     gradle(task: "test")
   end
 
-  desc "Release a new Internal Build to Google Play Store"
-  lane :releaseInternal do
-    clean
-    test
-
-    # automatic bump version
+  desc "Bump SemVer version"
+  lane :bumpSemverVersion do |options|
+    properties = {
+        "bump" => options[:bump],
+        "versionKey" => "APPLICATION_VERSION"
+    }
 
     gradle(
-        task: 'assemble',
-        build_type: 'Release',
-        print_command: true
+        task: 'bumpSemverVersion',
+        properties: properties
     )
-    upload_to_play_store(track: 'internal')
   end
+
+  private_lane :commit_build_bump do |options|
+    begin
+      git_commit(
+        path: "./app/build.gradle",
+        message: "[skip ci]: version bump #{options[:version]}"
+      )
+    rescue
+      UI.message "app/build.gradle was not changed with the bumped version, commit failed"
+    end
+  end
+
+  desc "Release a new Internal Build to Google Play Store"
+  lane :release do |options|
+    clean
+    test
+    bumpSemverVersion(bump: options[:bump])
+    assemble(buildType: 'Release')
+    upload_to_play_store(track: options[:track])
+  end
+
+  desc "Assemble"
+    lane :assemble do |options|
+      puts "Assemble #{options[:buildType]}"
+      gradle(
+          task: 'assemble',
+          build_type: options[:buildType]
+      )
+    end
 end

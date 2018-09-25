@@ -1,33 +1,30 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply from: "${rootProject.rootDir}/gradle/bumpSemverVersion.gradle"
 
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-def RELEASE_STORE_FILE = properties.getProperty('RELEASE_STORE_FILE')
-def RELEASE_KEY_ALIAS = properties.getProperty('RELEASE_KEY_ALIAS')
-def RELEASE_KEY_PASSWORD = properties.getProperty('RELEASE_KEY_PASSWORD')
-def RELEASE_STORE_PASSWORD = properties.getProperty('RELEASE_STORE_PASSWORD')
+ext {
+    APPLICATION_VERSION = "2.0.0"
+}
 
 android {
     compileSdkVersion 27
+
     defaultConfig {
         applicationId "com.tw.pipeline"
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 2
-        versionName "Two"
+        versionName APPLICATION_VERSION
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    signingConfigs {
 
+    signingConfigs {
         release {
-            storeFile file(RELEASE_STORE_FILE)
-            storePassword RELEASE_STORE_PASSWORD
-            keyAlias RELEASE_KEY_ALIAS
-            keyPassword RELEASE_KEY_PASSWORD
+            storeFile file(System.env.CIPIPE_RELEASE_STORE_FILE)
+            storePassword System.env.CIPIPE_RELEASE_STORE_PASSWORD
+            keyAlias System.env.CIPIPE_RELEASE_KEY_ALIAS
+            keyPassword System.env.CIPIPE_RELEASE_KEY_PASSWORD
         }
     }
 
